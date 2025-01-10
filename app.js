@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.error('MongoDB Connection Error:', err));
 
-// app.use('/api', cryptoRoutes);
+app.use('/api', cryptoRoutes);
 
 // Schedule the job every 2 hours
 cron.schedule('0 */2 * * *', async () => {
