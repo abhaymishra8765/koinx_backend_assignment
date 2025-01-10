@@ -59,3 +59,13 @@ Fetch the latest data for a specific cryptocurrency.
 ```plaintext
 coin=bitcoin  // or matic-network or ethereum
 ```
+
+### 2. **GET /api/stats**
+
+Fetch the standard deviation of the last 100 records for the selected cryptocurrency.
+
+#### Query Params:
+
+```plaintext
+coin=bitcoin  // or matic-network or ethereum
+```
