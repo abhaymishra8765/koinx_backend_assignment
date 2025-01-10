@@ -9,17 +9,15 @@ const cryptoRoutes = require('./routes/cryptoRoutes');
 const app = express();
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.error('MongoDB Connection Error:', err));
 
-app.use('/api', cryptoRoutes);
+// app.use('/api', cryptoRoutes);
 
 // Schedule the job every 2 hours
 cron.schedule('0 */2 * * *', async () => {
+    console.log('Cron job started');
     console.log('Fetching cryptocurrency data...');
     const coins = ['bitcoin', 'matic-network', 'ethereum'];
     for (const coin of coins) {
@@ -31,6 +29,7 @@ cron.schedule('0 */2 * * *', async () => {
         }
     }
 });
+
 
 
 const PORT = process.env.PORT || 5000;

@@ -2,7 +2,7 @@ const axios = require('axios');
 
 async function fetchCryptoData(coinId) {
     try {
-        const url = `https://api.coingecko.com/api/v3/simple/price?ids=${coinId}&vs_currencies=usd&include_market_cap=true&include_24hr_change=true`;
+        const url = `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&include_24hr_change=true`;
         const response = await axios.get(url);
         const data = response.data[coinId];
         return {
@@ -15,5 +15,6 @@ async function fetchCryptoData(coinId) {
         return null;
     }
 }
+
 
 module.exports = fetchCryptoData;
