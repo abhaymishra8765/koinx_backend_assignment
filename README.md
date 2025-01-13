@@ -60,7 +60,7 @@ Fetch the latest data for a specific cryptocurrency.
 coin=bitcoin  // or matic-network or ethereum
 ```
 
-### 2. **GET /api/stats**
+### 2. **GET /api/deviation**
 
 Fetch the standard deviation of the last 100 records for the selected cryptocurrency.
 
